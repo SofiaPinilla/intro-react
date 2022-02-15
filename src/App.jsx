@@ -1,5 +1,7 @@
 import React from 'react'
 import './App.css';
+import Counter from './components/Counter/Counter';
+import Example from './components/Example/Example';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 
@@ -55,7 +57,9 @@ function App() {
      <Header/>
      <Home/>
      <Welcome name="The Bridge"/>
-     <ul>{listItems}</ul>
+     <Counter initialValue={0}/>
+     <Counter initialValue={2}/>
+     <Example favoriteColor={"blue"}/>
     </div>
   );
 }
