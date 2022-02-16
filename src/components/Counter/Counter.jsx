@@ -19,6 +19,7 @@ import { useState } from "react";
 
 const Counter = (props) => {
   const [counter, setCounter] = useState(props.initialValue);
+
   const increment = () => {
     setCounter(counter + 1);
   };

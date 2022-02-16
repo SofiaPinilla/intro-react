@@ -4,13 +4,15 @@ import Counter from './components/Counter/Counter';
 import Example from './components/Example/Example';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
+import { UserForm } from './components/UserForm/UserForm';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 // const name = "Roberto";
 // const whoIAm = <h1>Hola, me llamo {name}</h1>;
 
-const Welcome = props => {
-  return <h3>Hello {props.name}</h3>
-}
+// const Welcome = props => {
+//   return <h3>Hello {props.name}</h3>
+// }
 
 // class Welcome extends React.Component {
 //   render() {
@@ -51,17 +53,21 @@ const listItems = members.map((member) => {
   )   
 });
 
+
 function App() {
   return (
     <div className="App">
-     <Header/>
-     <Home/>
-     <Welcome name="The Bridge"/>
-     <Counter initialValue={0}/>
-     <Counter initialValue={2}/>
-     <Example favoriteColor={"blue"}/>
+      <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/user" element={<UserForm />} />
+        <Route path="/counter" element={<Counter />} />
+      </Routes>
+      </Router>  
     </div>
   );
 }
+
 
 export default App;
